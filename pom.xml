@@ -44,6 +44,28 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+  				<groupId>com.google.cloud.tools</groupId>
+  				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.3.2</version>
+				<configuration>
+					<from>
+						<image>docker.io/openjdk:8-jre-alpine</image>
+						<auth>
+        					<username>${mohab98}</username>
+        					<password>${Meto13579*#}</password>
+        				</auth>
+					</from>
+					<to>
+						<image>registry.tools.idp.qeema.io/qt</image>
+						<auth>
+        					<username>${mashour}</username>
+        					<password>${9#5#kgrxd3mmUA}</password>
+        				</auth>
+					</to>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 

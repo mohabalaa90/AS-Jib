@@ -1,8 +1,8 @@
 FROM openjdk:8-jre-alpine
 
-EXPOSE 3030
+EXPOSE 9090
 
-COPY ./target/java-maven-app*.jar .
+COPY ./target/demo0.0.1-SNAPSHOT.jar demo0.0.1-SNAPSHOT.jar
 
 
-CMD ["java", "-jar","java-maven-app*.jar"]
+CMD ["java", "-jar","/demo0.0.1-SNAPSHOT.jar"]

@@ -19,7 +19,7 @@ def buildImagewithcred(){
   withCredentials([usernamePassword(credentialsId:'qeemaReg-Credentials' , passwordVariable:'PASS' , usernameVariable:'USER')]){
     sh 'echo $PASS | docker login "https://registry.tools.idp.qeema.io" -u $USER --password-stdin'
     sh "docker build -t registry.tools.idp.qeema.io/qeema_test:$BUILD_NUMBER ."
-    sh "docker push registry.tools.idp.qeema.io/qeema_test:$BUILD_NUMBER"  	  
+    //sh "docker push registry.tools.idp.qeema.io/qeema_test:$BUILD_NUMBER"  	  
   }
 }
 
