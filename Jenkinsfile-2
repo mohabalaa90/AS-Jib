@@ -1,0 +1,15 @@
+pipeline{
+  agent any
+  tools{
+    maven 'maven'
+  }
+  stages{
+    stage('building'){
+      steps{
+        script{
+          sh 'mvn package'
+        }
+      }
+    }
+  }
+}
