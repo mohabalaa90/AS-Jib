@@ -50,7 +50,6 @@
 				<version>3.3.2</version>
 				<configuration>
 					<from>
-						<!-- <image>adoptopenjdk:11-jre-hotspot</image> -->
 						<image>openjdk:alpine</image>
 						<auth>
         					<username>mohab98</username>
