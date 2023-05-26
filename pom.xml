@@ -44,7 +44,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!-- <plugin>
+			<plugin>
   				<groupId>com.google.cloud.tools</groupId>
   				<artifactId>jib-maven-plugin</artifactId>
 				<version>3.3.2</version>
@@ -67,11 +67,11 @@
         				</auth>
 					</to>
 					<container>
-						<entrypoint>
+						<!-- <entrypoint>
 							<shell>java</shell>
 							<option>-jar</option>
 							<arg>demo-0.0.1-SNAPSHOT.jar</arg>
-						</entrypoint>
+						</entrypoint> -->
 						<ports>
 							<port>9090</port>
 						</ports>
@@ -85,7 +85,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin> -->
+			</plugin>
 		</plugins>
 	</build>
 
