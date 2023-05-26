@@ -50,18 +50,18 @@
 				<version>3.3.2</version>
 				<configuration>
 					<from>
-						<!-- <auth>
+						<image>adoptopenjdk:11-jre-hotspot</image>
+						<auth>
         					<username>mohab98</username>
         					<password>Meto13579*#</password>
-        				</auth> -->
-						<image>adoptopenjdk:11-jre-hotspot</image>
+        				</auth>
 					</from>
 					<to>
+						<image>registry.tools.idp.qeema.io/qt</image>
 						<auth>
         					<username>mashour</username>
         					<password>9#5#kgrxd3mmUA</password>
         				</auth>
-						<image>registry.tools.idp.qeema.io/qt</image>
 					</to>
 				</configuration>
 				<executions>
