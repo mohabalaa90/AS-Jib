@@ -4,7 +4,7 @@ EXPOSE 9090
 
 WORKDIR /app
 
-COPY ./target/demo0.0.1-SNAPSHOT.jar ./demo0.0.1-SNAPSHOT.jar
+COPY ./target/demo-0.0.1-SNAPSHOT.jar ./demo-0.0.1-SNAPSHOT.jar
 
 
-ENTRYPOINT ["java", "-jar","demo0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar","demo-0.0.1-SNAPSHOT.jar"]
