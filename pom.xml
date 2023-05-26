@@ -50,7 +50,8 @@
 				<version>3.3.2</version>
 				<configuration>
 					<from>
-						<image>adoptopenjdk:11-jre-hotspot</image>
+						<!-- <image>adoptopenjdk:11-jre-hotspot</image> -->
+						<image>openjdk:alpine</image>
 						<auth>
         					<username>mohab98</username>
         					<password>Meto13579*#</password>
@@ -58,11 +59,24 @@
 					</from>
 					<to>
 						<image>registry.tools.idp.qeema.io/qt</image>
+						<tags>
+							<tag>2</tag>
+						</tags>
 						<auth>
         					<username>mashour</username>
         					<password>9#5#kgrxd3mmUA</password>
         				</auth>
 					</to>
+					<container>
+						<entrypoint>
+							<shell>java</shell>
+							<option>-jar</option>
+							<arg>demo-0.0.1-SNAPSHOT.jar</arg>
+						</entrypoint>
+						<ports>
+							<port>9090</port>
+						</ports>
+                    </container>
 				</configuration>
 				<executions>
 					<execution>
