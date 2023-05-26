@@ -57,14 +57,15 @@
         				</auth>
 					</from>
 					<to>
-						<image>registry.tools.idp.qeema.io/qt</image>
+						<!-- <image>registry.tools.idp.qeema.io/qt</image> -->
+						<image>jib-img</image>
 						<tags>
-							<tag>2</tag>
+							<tag>${BUILD_NUMBER}</tag>
 						</tags>
-						<auth>
+						<!-- <auth>
         					<username>mashour</username>
         					<password>9#5#kgrxd3mmUA</password>
-        				</auth>
+        				</auth> -->
 					</to>
 					<container>
 						<!-- <entrypoint>
