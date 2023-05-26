@@ -50,11 +50,11 @@
 				<version>3.3.2</version>
 				<configuration>
 					<from>
-						<auth>
+						<!-- <auth>
         					<username>mohab98</username>
         					<password>Meto13579*#</password>
-        				</auth>
-						<image>docker.io/openjdk:8-jre-alpine</image>
+        				</auth> -->
+						<image>adoptopenjdk:11-jre-hotspot</image>
 					</from>
 					<to>
 						<auth>
