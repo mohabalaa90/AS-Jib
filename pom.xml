@@ -50,18 +50,18 @@
 				<version>3.3.2</version>
 				<configuration>
 					<from>
-						<image>docker.io/openjdk:8-jre-alpine</image>
 						<auth>
-        					<username>${mohab98}</username>
-        					<password>${Meto13579*#}</password>
+        					<username>mohab98</username>
+        					<password>Meto13579*#</password>
         				</auth>
+						<image>docker.io/openjdk:8-jre-alpine</image>
 					</from>
 					<to>
-						<image>registry.tools.idp.qeema.io/qt</image>
 						<auth>
-        					<username>${mashour}</username>
-        					<password>${9#5#kgrxd3mmUA}</password>
+        					<username>mashour</username>
+        					<password>9#5#kgrxd3mmUA</password>
         				</auth>
+						<image>registry.tools.idp.qeema.io/qt</image>
 					</to>
 				</configuration>
 				<executions>
