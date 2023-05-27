@@ -57,13 +57,14 @@
         				</auth>
 					</from>
 					<to>
-						<!-- disable pushregister comment this -->
+						<!-- disable push register comment this -->
 						<image>registry.tools.idp.qeema.io/qeema_test</image>
-						<image>jib-img</image>
+						<!-- to push locally  -->
+						<!-- <image>jib-img</image> -->
 						<tags>
 							<tag>${BUILD_NUMBER}</tag>
 						</tags>
-						<!-- disable pushregister comment this -->
+						<!-- disable push register comment this -->
 						<auth>
         					<username>mashour</username>
         					<password>9#5#kgrxd3mmUA</password>
