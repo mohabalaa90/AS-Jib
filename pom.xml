@@ -57,7 +57,7 @@
         				</auth>
 					</from>
 					<to>
-						<!-- <image>registry.tools.idp.qeema.io/qt</image> -->
+						<!-- <image>registry.tools.idp.qeema.io/qeema_test</image> -->
 						<image>jib-img</image>
 						<tags>
 							<tag>${BUILD_NUMBER}</tag>
@@ -82,6 +82,9 @@
 					<execution>
 						<phase>package</phase>
 						<goals>
+							<!-- this will  build and push to registery  -->
+							<!-- <goal>build</goal> -->
+							<!-- this will build image locally  -->
 							<goal>dockerBuild</goal>
 						</goals>
 					</execution>
