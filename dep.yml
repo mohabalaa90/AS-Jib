@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,4 +14,9 @@ spec:
     spec:
       containers:
       - name: app1
-        image: httpd
+        image: registry.tools.idp.qeema.io/qeema_test:imgtag
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9090
+      imagePullSecrets:
+      - name: qeema-secret
