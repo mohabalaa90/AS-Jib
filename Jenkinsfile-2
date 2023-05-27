@@ -1,24 +1,24 @@
 def gv
 pipeline{
   agent any
-  // tools{
-  //   maven 'maven'
-  // }
+  tools{
+    maven 'maven'
+  }
     stages{
-    stage('init'){
-      steps{
-        script{
-          gv = load "script.groovy"
+        stage('init'){
+          steps{
+            script{
+              gv = load "script.groovy"
+            }
+          }
         }
-      }
-    }
-  //   stage('building'){
-  //     steps{
-  //       script{
-  //         gv.buildJar()
-  //       }
-  //     }
-  //   }
+        stage('building'){
+          steps{
+            script{
+              gv.buildJar()
+            }
+          }
+        }
         stage('push artifacts'){
           steps{
               sshagent(['k8s-cred']) {

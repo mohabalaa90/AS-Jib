@@ -57,22 +57,19 @@
         				</auth>
 					</from>
 					<to>
-						<!-- <image>registry.tools.idp.qeema.io/qeema_test</image> -->
+						<!-- disable pushregister comment this -->
+						<image>registry.tools.idp.qeema.io/qeema_test</image>
 						<image>jib-img</image>
 						<tags>
 							<tag>${BUILD_NUMBER}</tag>
 						</tags>
-						<!-- <auth>
+						<!-- disable pushregister comment this -->
+						<auth>
         					<username>mashour</username>
         					<password>9#5#kgrxd3mmUA</password>
-        				</auth> -->
+        				</auth>
 					</to>
 					<container>
-						<!-- <entrypoint>
-							<shell>java</shell>
-							<option>-jar</option>
-							<arg>demo-0.0.1-SNAPSHOT.jar</arg>
-						</entrypoint> -->
 						<ports>
 							<port>9090</port>
 						</ports>
@@ -83,9 +80,9 @@
 						<phase>package</phase>
 						<goals>
 							<!-- this will  build and push to registery  -->
-							<!-- <goal>build</goal> -->
+							<goal>build</goal>
 							<!-- this will build image locally  -->
-							<goal>dockerBuild</goal>
+							<!-- <goal>dockerBuild</goal> -->
 						</goals>
 					</execution>
 				</executions>
