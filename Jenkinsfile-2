@@ -11,17 +11,17 @@ pipeline{
   //       }
   //     }
   //   }
-    stage('clear dep on k8s'){
-        steps{
-            sshagent(['k8s-cred']) {
-              sh "scp -o StrictHostKeyChecking=no dep.yml svc.yml root@192.168.1.100:/"
-              script{
-                sh "ssh root@192.168.1.100 kubectl delete -f /dep.yml"
-                sh "ssh root@192.168.1.100 kubectl delete -f /svc.yml"
-            }
-          }
-        }
-      }
+    // stage('clear dep on k8s'){
+    //     steps{
+    //         sshagent(['k8s-cred']) {
+    //           sh "scp -o StrictHostKeyChecking=no dep.yml svc.yml root@192.168.1.100:/"
+    //           script{
+    //             sh "ssh root@192.168.1.100 kubectl delete -f /dep.yml"
+    //             sh "ssh root@192.168.1.100 kubectl delete -f /svc.yml"
+    //         }
+    //       }
+    //     }
+    //   }
     stage('deploy to k8s'){
       steps{
           sshagent(['k8s-cred']) {
