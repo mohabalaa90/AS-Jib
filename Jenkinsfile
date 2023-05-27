@@ -34,18 +34,22 @@ pipeline{
        }
     }
     stage('push artifacts'){
-      steps{
-          sshagent(['k8s-cred']) {
-            gv.publishArtifacts()
-         }
-       }
-    }
-    stage('deploy to k8s'){
-      steps{
-          sshagent(['k8s-cred']) {
-            gv.deploytok8swithcred()
-         }
-       }
-    }
+          steps{
+              sshagent(['k8s-cred']) {
+                script{
+                  gv.publishArtifacts()
+                }
+            }
+          }
+        }
+        stage('deploy to k8s'){
+          steps{
+              sshagent(['k8s-cred']) {
+                script{
+                  gv.deploytok8swithcred()
+                }
+            }
+          }
+        }
   }
 }
