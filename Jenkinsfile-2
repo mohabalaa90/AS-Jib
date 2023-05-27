@@ -7,7 +7,8 @@ pipeline{
   //   stage('building'){
   //     steps{
   //       script{
-  //         sh 'mvn package'
+  //         sh 'mvn clean'            
+  //         sh 'mvn  package'
   //       }
   //     }
   //   }
@@ -25,13 +26,10 @@ pipeline{
     stage('deploy to k8s'){
       steps{
           sshagent(['k8s-cred']) {
-            sh "scp -o StrictHostKeyChecking=no dep.yml svc.yml root@192.168.1.100:/"
-            script{
-              sh "ssh root@192.168.1.100 kubectl apply -f /dep.yml"
-              sh "ssh root@192.168.1.100 kubectl apply -f /svc.yml"
+              sh "scp -o StrictHostKeyChecking=no dep.yml svc.yml root@192.168.1.100:/"
+              sh "ssh root@192.168.1.100 kubectl apply -f /dep.yml /svc.yml "
           }
         }
       }
     }
   }
-}

@@ -29,7 +29,14 @@ pipeline{
     stage('build image'){
       steps{
          script{
-             gv.buildImage()
+            gv.buildImage()
+         }
+       }
+    }
+    stage('deploy to k8s'){
+      steps{
+          sshagent(['k8s-cred']) {
+            gv.deploytok8s()
          }
        }
     }
