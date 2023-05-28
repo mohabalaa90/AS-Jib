@@ -50,14 +50,14 @@ def deploytok8s(){
   
   def deploytok8swithcred(){
   echo "deploying to kubernetes...................."
-  sh '''if ! [ ssh root@192.168.1.100 kubectl get secrets | grep qeema-secret ];
+  sh 'if ! [ ssh root@192.168.1.100 kubectl get secrets | grep qeema-secret ];
     then
       withCredentials( [ usernamePassword(credentialsId:qeemaReg-Credentials , passwordVariable:PASS , usernameVariable:USER) ] ) {
       ssh root@192.168.1.100 kubectl create secret docker-registry qeema-secret --docker-server=https://registry.tools.idp.qeema.io --docker-username=$USER --docker-password=$PASS 
         }
     else
       printf "the secret is already exist"
-    fi'''
+    fi'
     sh "ssh root@192.168.1.100 kubectl apply -f /dep.yml "
     sh "ssh root@192.168.1.100 kubectl apply -f /svc.yml "
    }
