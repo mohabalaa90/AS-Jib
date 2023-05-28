@@ -8,7 +8,8 @@ def buildJarwithcred(){
   echo "building jar file............... "
   withCredentials([usernamePassword(credentialsId:'qeemaReg-Credentials' , passwordVariable:'qeema-pass' , usernameVariable:'qeema-user'),
   usernamePassword(credentialsId:'dockerHub-Credentials' , passwordVariable:'docker-pass' , usernameVariable:'docker-user')]){
-  sh 'mvn clean package -Djib.from.auth.username=$docker-user -Djib.from.auth.password= $docker-pass -Djib.to.auth.username=$qeema-user -Djib.to.auth.password=$qeema-pass'
+  sh 'mvn clean'
+  sh 'mvn package -Djib.from.auth.username=$docker-user -Djib.from.auth.password= $docker-pass -Djib.to.auth.username=$qeema-user -Djib.to.auth.password=$qeema-pass'
   }
 }
 
