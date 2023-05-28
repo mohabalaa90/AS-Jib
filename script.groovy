@@ -4,6 +4,14 @@ def buildJar(){
   sh 'mvn package'
 }
 
+def buildJarwithcred(){
+  echo "building jar file............... "
+  withCredentials([usernamePassword(credentialsId:'qeemaReg-Credentials' , passwordVariable:'qeema-pass' , usernameVariable:'qeema-user'),
+  usernamePassword(credentialsId:'dockerhub-Credentials' , passwordVariable:'docker-pass' , usernameVariable:'docker-user')]){
+  sh 'mvn clean package -Djib.from.auth.username=$docker-user -Djib.from.auth.password= $docker-pass -Djib.to.auth.username=$qeema-user -Djib.to.auth.password=$qeema-pass'
+  }
+}
+
 def clearOldImages(){
   echo "clearing Old Images ..............."
   sh '''if docker images -a  | grep "*qeema*" | awk \'{print $3}\' | xargs docker rmi -f ;

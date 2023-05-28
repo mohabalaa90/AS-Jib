@@ -51,10 +51,10 @@
 				<configuration>
 					<from>
 						<image>openjdk:alpine</image>
-						<auth>
+						<!-- <auth>
         					<username>mohab98</username>
         					<password>Meto13579*#</password>
-        				</auth>
+        				</auth> -->
 					</from>
 					<to>
 						<!-- disable push register comment this -->
@@ -65,10 +65,10 @@
 							<tag>${BUILD_NUMBER}</tag>
 						</tags>
 						<!-- disable push register comment this -->
-						<auth>
+						<!-- <auth>
         					<username>mashour</username>
         					<password>9#5#kgrxd3mmUA</password>
-        				</auth>
+        				</auth> -->
 					</to>
 					<container>
 						<ports>
