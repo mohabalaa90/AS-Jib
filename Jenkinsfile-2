@@ -12,22 +12,22 @@ pipeline{
             }
           }
         }
-        stage('building'){
-          steps{
-            script{
-              gv.buildJar()
-            }
-          }
-        }
-        stage('push artifacts'){
-          steps{
-              sshagent(['k8s-cred']) {
-                script{
-                  gv.publishArtifacts()
-                }
-            }
-          }
-        }
+        // stage('building'){
+        //   steps{
+        //     script{
+        //       gv.buildJar()
+        //     }
+        //   }
+        // }
+        // stage('push artifacts'){
+        //   steps{
+        //       sshagent(['k8s-cred']) {
+        //         script{
+        //           gv.publishArtifacts()
+        //         }
+        //     }
+        //   }
+        // }
         stage('deploy to k8s'){
           steps{
               sshagent(['k8s-cred']) {
