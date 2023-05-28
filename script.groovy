@@ -1,6 +1,6 @@
 def buildJar(){
   echo "building jar file............... "
-   sh 'mvn clean'
+  sh 'mvn clean'
   sh 'mvn package'
 }
 
