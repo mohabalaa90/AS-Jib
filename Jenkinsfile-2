@@ -4,38 +4,38 @@ pipeline{
   tools{
     maven 'maven'
   }
-    stages{
-        stage('init'){
-          steps{
-            script{
-              gv = load "script.groovy"
-            }
-          }
-        }
-        // stage('building'){
-        //   steps{
-        //     script{
-        //       gv.buildJar()
-        //     }
-        //   }
-        // }
-        // stage('push artifacts'){
-        //   steps{
-        //       sshagent(['k8s-cred']) {
-        //         script{
-        //           gv.publishArtifacts()
-        //         }
-        //     }
-        //   }
-        // }
-        stage('deploy to k8s'){
-          steps{
-              sshagent(['k8s-cred']) {
-                script{
-                  gv.deploytok8swithcred()
-                }
-            }
-          }
+  stages{
+    stage('init'){
+      steps{
+        script{
+          gv = load "script.groovy"
         }
       }
     }
+    stage('building'){
+      steps{
+        script{
+          gv.buildJar()
+        }
+      }
+    }
+    stage('push artifacts'){
+      steps{
+          sshagent(['k8s-cred']) {
+            script{
+              gv.publishArtifacts()
+            }
+        }
+      }
+    }
+    stage('deploy to k8s'){
+      steps{
+          sshagent(['k8s-cred']) {
+            script{
+              gv.deploytok8swithcred()
+            }
+        }
+      }
+    }
+  }
+}

@@ -28,28 +28,28 @@ pipeline{
     }
     stage('build image'){
       steps{
-         script{
+          script{
             gv.buildImage()
-         }
-       }
+          }
+        }
     }
     stage('push artifacts'){
-          steps{
-              sshagent(['k8s-cred']) {
-                script{
-                  gv.publishArtifacts()
-                }
-            }
+      steps{
+        sshagent(['k8s-cred']) {
+          script{
+            gv.publishArtifacts()
           }
         }
-        stage('deploy to k8s'){
-          steps{
-              sshagent(['k8s-cred']) {
-                script{
-                  gv.deploytok8swithcred()
-                }
-            }
+      }
+    }
+    stage('deploy to k8s'){
+      steps{
+        sshagent(['k8s-cred']) {
+          script{
+            gv.deploytok8swithcred()
           }
         }
+      }
+    }
   }
 }
