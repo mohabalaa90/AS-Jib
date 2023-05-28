@@ -79,12 +79,12 @@
 				<executions>
 					<execution>
 						<phase>package</phase>
-						<goals>
+						<!-- <goals> -->
 							<!-- this will  build and push to registery  -->
-							<goal>build</goal>
+							<!-- <goal>build</goal> -->
 							<!-- this will build image locally  -->
 							<!-- <goal>dockerBuild</goal> -->
-						</goals>
+						<!-- </goals> -->
 					</execution>
 				</executions>
 			</plugin>
