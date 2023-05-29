@@ -1,21 +1,23 @@
-def gv
+//use this file when you use the jib plugin 
+
+def gv                                                  // define variable to read groovy script
 pipeline{
-  agent any
+  agent any                                             // use the default agent
   tools{
-    maven 'maven'
+    maven 'maven'                                       // use the maven plugin
   }
   stages{
     stage('init'){
       steps{
         script{
-          gv = load "script.groovy"
+          gv = load "script.groovy"                     // load the groovy script & store it in the variable 
         }
       }
     }
     stage('building'){
       steps{
         script{
-          gv.buildJarwithcred()
+          gv.buildJarwithcred()                         // build --> dockarize  --> push 
         }
       }
     }
@@ -23,7 +25,7 @@ pipeline{
       steps{
           sshagent(['k8s-cred']) {
             script{
-              gv.publishArtifacts()
+              gv.publishArtifacts()                    // send the deployment & service files to k8s cluster
             }
         }
       }
@@ -32,7 +34,7 @@ pipeline{
       steps{
           sshagent(['k8s-cred']) {
             script{
-              gv.deploytok8swithcred()
+              gv.deploytok8swithcred()                // deploy the deployment & service on the k8s cluster
             }
         }
       }

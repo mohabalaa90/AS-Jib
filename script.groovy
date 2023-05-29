@@ -1,9 +1,11 @@
+// this function to delete the old jar file then create a new one 
 def buildJar(){
   echo "building jar file............... "
   sh 'mvn clean'
   sh 'mvn package'
 }
 
+// use it incase using the Jenkinsfile-2
 def buildJarwithcred(){
   echo "building jar file............... "
   withCredentials([usernamePassword(credentialsId:'qeemaReg-Credentials' , passwordVariable:'qeema_pass' , usernameVariable:'qeema_user'),
@@ -38,14 +40,17 @@ def buildImage(){
     sh "docker push registry.tools.idp.qeema.io/qeema_test:$BUILD_NUMBER" 
 }
 
+// send deployment and svc files to k8s cluster
 def publishArtifacts(){
   echo "push yaml files to kubernetes cluster ........."
-  sh "sed -i 's/imgtag/$BUILD_NUMBER/g' dep.yml"
+  sh "sed -i 's/imgtag/$BUILD_NUMBER/g' dep.yml"         // replace the image tag with the current vuild number
   sh "scp -o StrictHostKeyChecking=no dep.yml svc.yml root@192.168.1.100:/"
   }
 
+//deploy to k8s cluster 
 def deploytok8s(){
   echo "deploying to kubernetes...................."
+  //check whether the secret object is deployed to k8s cluster 
   sh '''if ! ssh root@192.168.1.100 kubectl get secrets | grep qeema-secret
     then
       ssh root@192.168.1.100 kubectl create secret docker-registry qeema-secret --docker-server=https://registry.tools.idp.qeema.io --docker-username=mashour --docker-password=9#5#kgrxd3mmUA "
